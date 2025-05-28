@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SignIn</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+      <header class="header">
+        <img src="eco-5465482_640.webp" alt="Logo" class="logo">
+      </header>
+      <h1>SignIn</h1>
+        <div class="login-page">
+            <div class="login-container">
+              <form>
+              <div class="form-group">
+                <br>
+                <!--<label for="txt_username">Email <span style="color:red ;">*</span></label> -->
+                <input type="email" placeholder="enter email" id="txt_username" required onfocusout="checke()"><br>
+                <span id="username_error" class="error_message" style="color:red ;"></span>
+              </div> 
+              <div class="form-group">
+               <!--<label for="txt_password">Password <span style="color:red ;">*</span></label>--> 
+                <input type="password" placeholder="password" id="txt_password" required onfocusout="checkp()"><br>
+                <span id="password_error" class="error_message" style="color:red ;"></span>
+              </div>
+            <button type="button" onclick="loginFunction()">SignIn</button>
+          </form>
+          <div class="link-row">
+            <a href="#" style="margin-top: 24px">Forgot Password?</a>
+          </div>          
+          </div>
+          </div>
+          <div class="container">
+            <div class="account-info">
+              <span class="no-account">Not have an account?</span>
+              <a href="s.html" class="signup-link">Sign Up</a>
+            </div>
+          </div>
+          
+    </body>
+    <script>
+      function checke(){
+        var emailc= document.getElementById("txt_username").value;
+        if(emailc ==""){
+          document.getElementById("username_error").textContent="email is required";
+        }else{
+          const exp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!exp.test(emailc)) {
+          document.getElementById("username_error").textContent="Please enter a valid email address.";
+        }
+      }
+    }
+    function checkp(){
+        var passwordc= document.getElementById("txt_password").value;
+        if(passwordc ==""){
+          document.getElementById("password_error").textContent="password is required";
+        }
+        else{
+          var length= passwordc.length;
+          if(length < 8)
+          {
+            document.getElementById("password_error").textContent="password must be 8letters";
+          }
+        }
+    }
+      function loginFunction(){
+
+        var username= document.getElementById("txt_username").value;
+        var password= document.getElementById("txt_password").value;
+        if(username=="ann@gmail.com" && password=="123456789")
+        {
+        var isvalid= true;
+        }
+        document.getElementById("username_error").style.display= "none";
+        document.getElementById("password_error").style.display= "none";
+
+        if(username === ""){
+          document.getElementById("username_error").textContent="username is required";
+          document.getElementById("username_error").style.display="block";
+          isvalid=false;
+        }
+        if(password === ""){
+          document.getElementById("password_error").textContent="password is required";
+          document.getElementById("password_error").style.display="block";
+          isvalid=false;
+        }
+        if(isvalid){
+          alert("Login successfull");
+          window.location.href="home.html"
+        }
+      }
+    </script>
+</html>

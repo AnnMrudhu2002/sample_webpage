@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sample</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="homestyle.css" type="text/css">
+    </head>
+    <body>
+    <div class="navcontainer">
+            <img src="eco-5465482_640.webp" style="width:40px; height:40px ;">
+            <input type="text" placeholder="Search.." style="margin-left:-690px ;">
+        <div class="navtags">
+            <a href="#">Home</a> 
+            <a href="aboutus.html">About us</a>
+            <a href="contactus.html">Contact us</a>
+            <div class="dropdown">
+                <a href="#"><i class="fa fa-fw fa-user"></i></a>
+                <div class="dropdown-content">
+                  <a href="profile.html">Profile</a>
+                  <a href="index.html">LogOut</a>
+                </div>
+              </div>
+            
+        </div>
+    </div>
+    <br> <br> <br> <br> <br> <br> <br> <br> 
+        <h1 style="margin-left:93px;">Welcome To My Web Page</h1>
+    <div class="incontainer">
+        <iframe src="https://www.flipkart.com/" name="iframe_a" title="Iframe Example" style="width:1300px ; height:400px"></iframe>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="im2.jpg" style="width:100%; height: 147px;">
+        </div>
+        <div class="mySlides fade">
+          <img src="im1.avif" style="width:100%; height: 147px;">
+        </div>
+        <div class="mySlides fade">
+          <img src="im3.jpg" style="width:100%; height: 147px;">
+        </div>
+      </div>
+      
+      <br><br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+      
+      <script src="script.js"></script>
+      <br><br>
+    <div>
+        <table>
+            <tr>
+              <th>Flipkart</th>
+              <th>Amazon</th>
+              <th>Mynta</th>
+              <th>Ajio</th>
+              <th>Urbanic</th>
+              <th>Savana</th>
+            </tr>
+            <tr>
+              <td>Fast Delivery</td>
+              <td>Express Shipping</td>
+              <td>Returns avalilable</td>
+              <td>7-day easy return</td>
+              <td>UserFriendly</td>
+              <td>Dynamic</td>
+            </tr>
+            <tr>
+                <td>Fast Delivery</td>
+                <td>Express Shipping</td>
+                <td>Returns avalilable</td>
+                <td>7-day easy return</td>
+                <td>UserFriendly</td>
+                <td>Dynamic</td>
+            </tr>
+            <tr>
+                <td>Fast Delivery</td>
+                <td>Express Shipping</td>
+                <td>Returns avalilable</td>
+                <td>7-day easy return</td>
+                <td>UserFriendly</td>
+                <td>Dynamic</td>
+            </tr>
+          </table>
+        <br><br><br>
+        <br>
+    </div>
+    <div class="footercontainer">
+    <footer>
+        <P style="margin-top:10px;">&copy; 2025 My website.All rights reserved.</P>
+    </footer>
+</div>
+    </body>
+    <script>
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].classList.add("active");
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+</script>
+</html>
+
